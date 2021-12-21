@@ -1,8 +1,7 @@
 #%%
 from aocd.models import Puzzle
 from aocd import submit
-puzzle = Puzzle(year=2021, day=1)
-print(puzzle.input_data_fname)
+
 
 import numpy as np
 
@@ -46,9 +45,10 @@ def part2(data, window_size = 3):
     
 
 if __name__ == '__main__':
+    puzzle = Puzzle(year=2021, day=1)
     data  = parse(puzzle.input_data)
     soln = part1(data)
-    print(soln)
+    # print(soln)
     part2_soln = part2(data)
     #submit(soln, part="a", day=1, year=2021)
     submit(part2_soln, part = "b", day = 1, year = 2021)

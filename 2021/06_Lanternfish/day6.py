@@ -114,7 +114,7 @@ def part2(start_fish, n_days):
 
 def part2_arr(start_fish, n_days):
     
-    current_state = [
+    current_state = np.array([
         start_fish[start_fish==0].shape[0],
         start_fish[start_fish==1].shape[0],
         start_fish[start_fish==2].shape[0],
@@ -124,7 +124,7 @@ def part2_arr(start_fish, n_days):
         start_fish[start_fish==6].shape[0],
         0,
         0,
-    ]
+    ], dtype = np.float64)
     
     for day in np.arange(0, n_days):
         
@@ -150,5 +150,4 @@ if __name__ == '__main__':
     #submit(soln_a, part = "a", year = 2021, day = 6)
     
     soln_b = part2(start_fish, 256)
-    submit(soln_b, part = 'b', year = 2021, day = 6)
-# %%
+    #submit(soln_b, part = 'b', year = 2021, day = 6)

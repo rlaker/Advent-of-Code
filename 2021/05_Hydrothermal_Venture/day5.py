@@ -28,7 +28,7 @@ def part1(coords_start, coords_end):
     
     lines_to_select = np.concatenate((horiz_idc, vertical_idc))
     
-    print(lines_to_select)
+    # print(lines_to_select)
     dimension = np.max([coords_start.max(), coords_end.max()]) + 1
     line_map = np.zeros((dimension, dimension))
     
@@ -52,9 +52,9 @@ def part1(coords_start, coords_end):
             else:
                 y_idx = np.arange(line_start[1], line_end[1]+1)
             x_idx = line_start[0]
-        print(line_start)
-        print(x_idx, y_idx)
-        print('')
+        # print(line_start)
+        # print(x_idx, y_idx)
+        # print('')
         line_map[y_idx, x_idx] += 1
         
     #how many where at least two lines overlap
@@ -116,17 +116,17 @@ def part2(coords_start, coords_end):
             else:
                 print('missed', line_start, line_end)
             
-        print(line_start, line_end)
+        # print(line_start, line_end)
         #print(x_idx, y_idx)
         line_map[y_idx, x_idx] += 1
         test_map = np.zeros((dimension, dimension))
         test_map[y_idx, x_idx] += 1
         #print(test_map)
-        print('')
+        # print('')
     
-    print(line_map)
+    # print(line_map)
     #how many where at least two lines overlap
-    return np.argwhere(line_map >= 2).shape[0], line_map
+    return np.argwhere(line_map >= 2).shape[0]
     
 # %%
 if __name__ == '__main__':
@@ -139,6 +139,6 @@ if __name__ == '__main__':
     
     #submit(soln_a, part = 'a', day = 5, year=2021)
     soln_b, line_map = part2(coords_start, coords_end)
-    print(soln_b)
-    submit(soln_b, part="b", year = 2021, day = 5)
+    # print(soln_b)
+    # submit(soln_b, part="b", year = 2021, day = 5)
 # %%

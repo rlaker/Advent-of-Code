@@ -86,11 +86,11 @@ if __name__ == '__main__':
     directions, values = parse(puzzle.input_data)
     
     soln_a = part1(directions, values)
-    print(soln_a)
+    # print(soln_a)
     #submit(soln_a, part = 'a', day = 2, year = 2021)
     
     soln_b = part2(directions, values)
-    print(soln_b)
+    # print(soln_b)
     
     #submit(soln_b, part = 'b', day = 2, year = 2021)
 # %%

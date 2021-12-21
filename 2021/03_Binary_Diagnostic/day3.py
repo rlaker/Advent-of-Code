@@ -1,9 +1,7 @@
 #%%
 from aocd.models import Puzzle
 from aocd import submit
-puzzle = Puzzle(year=2021, day=3)
-print(puzzle.input_data_fname)
-print(puzzle.input_data)
+
 #%%
 import numpy as np
 
@@ -70,7 +68,7 @@ def search_for_bit(data, bit, idx):
 def get_generic_rating(data, mode = 'most'):
     remaining_bytes = data.copy()
     idx = 0
-    print(remaining_bytes)
+    # print(remaining_bytes)
     while len(remaining_bytes) > 1:
         #do the logic
         to_search = common_colm(remaining_bytes, idx, mode)
@@ -79,7 +77,7 @@ def get_generic_rating(data, mode = 'most'):
         matching = search_for_bit(remaining_bytes, to_search, idx)
         
         remaining_bytes = matching.copy()
-        print(idx, to_search, remaining_bytes)
+        # print(idx, to_search, remaining_bytes)
         idx += 1
     
     return int(remaining_bytes[0],2)
@@ -99,11 +97,13 @@ def get_life_support_rating(data):
     
 
 if __name__ == '__main__':
+    puzzle = Puzzle(year=2021, day=3)
+
     data  = parse(puzzle.input_data)
     soln = part1(data)
-    print(soln)
+    # print(soln)
     part2_soln = get_life_support_rating(data)
     #submit(soln, part="a", day=3, year=2021)
-    submit(part2_soln, part = "b", day = 3, year = 2021)
+    # submit(part2_soln, part = "b", day = 3, year = 2021)
 
 # %%

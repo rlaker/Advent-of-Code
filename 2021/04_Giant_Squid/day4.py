@@ -1,9 +1,6 @@
 #%%
 from aocd.models import Puzzle
 from aocd import submit
-puzzle = Puzzle(year=2021, day=4)
-print(puzzle.input_data_fname)
-print(puzzle.input_data)
 #%%
 import numpy as np
 
@@ -48,7 +45,7 @@ def check_card(card):
 def part1(cards, drawn_balls):
     winning_idx = []
     for i, ball in enumerate(drawn_balls):
-        print(ball)
+        # print(ball)
         #cross of all the balls so far
         crossed_off = np.in1d(cards, drawn_balls[:i+1]).reshape(cards.shape)
         
@@ -84,9 +81,10 @@ def part2(cards, drawn_balls):
         crossed_off = np.in1d(cards, drawn_balls[:ball_idx+1]).reshape(cards.shape)
         
         if len(losing_idc)<5:
-            print(f'ball no {ball}, idx {ball_idx}')
-            print(losing_idc)
-            print('')
+            pass
+            # print(f'ball no {ball}, idx {ball_idx}')
+            # print(losing_idc)
+            # print('')
             
         #now check if any card has won
         for idx, card in enumerate(crossed_off):
@@ -97,7 +95,7 @@ def part2(cards, drawn_balls):
                     if len(losing_idc) == 1:
                         #get the sum of unchecked numbers
                         losing_idx = losing_idc[0]
-                        print(f"card {losing_idx}, when idx {ball_idx} is picked")
+                        # print(f"card {losing_idx}, when idx {ball_idx} is picked")
                         sum_unmarked = np.sum(cards[losing_idx][~crossed_off[losing_idx]])
                         answer = sum_unmarked * ball
     
@@ -115,6 +113,7 @@ def part2(cards, drawn_balls):
     
 #%%       
 if __name__ == '__main__':
+    puzzle = Puzzle(year = 2021, day = 4)
     puzzle_input = puzzle.input_data
     cards, drawn_balls = parse(puzzle_input)
     #soln_a, winning_idx = part1(cards, drawn_balls)
