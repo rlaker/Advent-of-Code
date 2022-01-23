@@ -18,3 +18,6 @@ def test_part1(example):
     height_map = mycode.parse(example)
     assert mycode.part1(height_map) == 15
     
+def test_part2(example):
+    height_map = mycode.parse(example)
+    assert mycode.part2(height_map) == 1134 
